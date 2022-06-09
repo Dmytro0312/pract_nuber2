@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "jquery": "^3.6.0"
+  },
+  "name": "tomatoshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dmytro0312/pract_nuber2.git"
+  },
+  "author": "litvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dmytro0312/pract_nuber2/issues"
+  },
+  "homepage": "https://github.com/Dmytro0312/pract_nuber2#readme",
+  "description": ""
+}
