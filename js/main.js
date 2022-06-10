@@ -1,4 +1,4 @@
-Vue.config.productionTip = false
+/*Vue.config.productionTip = false
 var app = new Vue({
 	el:'#app',
 	data:{
@@ -108,4 +108,4 @@ fetch('https://restcountries.eu/rest/v2/regionalbloc/eu')
     });
     document.getElementsByClassName("list")[0].getElementsByClassName("capitals")[0].appendChild(Capitals);     
     
-});
+});*/
