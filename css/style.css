@@ -136,6 +136,10 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+.but-push {
+  display: flex;
+  justify-content: center;
+}
 
 .header_text {
   font-weight: 700;
@@ -179,6 +183,10 @@ body {
 
   .header_button {
     margin: 50px auto 0;
+  }
+  .button-subscribe-push{
+    margin: 50px auto 0;
+    display: block;
   }
 }
 .center1 {
@@ -1395,6 +1403,17 @@ body {
 
 .page3_center2 span {
   color: #57984C;
+}
+
+.button-subscribe-push {
+  background-color: #919191; 
+    border: none;
+    color: rgb(0, 0, 0);
+    margin: 0 auto;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 @media (max-width: 1050px) {
