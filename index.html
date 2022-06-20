@@ -7,14 +7,43 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="manifest" href="manifest.json">
 	<script>
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker
-			.register('/sw.js')
-			.then(function() {
-				console.log('Service worker registered!');
-			});
-		}
-	</script>
+		//Push Notifications
+			function askPermission() {
+				return new Promise(function(resolve, reject) {
+					const permissionResult = Notification.requestPermission(function(result) {
+					resolve(result);
+					});
+	
+					if (permissionResult) {
+					permissionResult.then(resolve, reject);
+					}
+				})
+				.then(function(permissionResult) {
+					if (permissionResult !== 'granted') {
+					throw new Error('We weren\'t granted permition.');
+					}
+				});
+			}
+	
+		//Service Worker
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker
+				.register('sw.js')
+				.then(function() {
+					console.log('Service Worker registered!');
+				});
+	
+			//Push Notifications
+				navigator.serviceWorker.ready.then(registration => {
+					if ('PushManager' in Window) {
+						document.querySelector('button.subscribe-for-push')
+							.addEventListener('click', () => {
+								askPermission()
+							});
+					}
+				});
+			}
+		</script>
 </head>
 <body>
 	<div class="wrapper" id="app">
@@ -49,6 +78,9 @@
 					<div class="header_conteiner1">
 						<div class="header_text"> Agridera Seeds and Agriculture Ltd</div>
 						<div class="header_button"> read more</div>
+						<div class="but-push">
+						<button class="button-subscribe-push">SUBSCRIBE FOR PUSH NOTIFICATIONS</button>
+						</div>
 					</div>
 				</header>
 				<div class="center1">

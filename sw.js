@@ -24,3 +24,8 @@ self.addEventListener('activate', function(event) {
                 })
         );
     });
+
+    self.addEventListener('push', event => {
+        const notification = event.data.text();
+        self.registration.showNotification(notification, {});
+    });
